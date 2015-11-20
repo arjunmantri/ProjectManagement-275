@@ -29,7 +29,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class HibernateConfig {
 	
-/*
+
 	@Bean
 	public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
@@ -44,10 +44,10 @@ public class HibernateConfig {
 
 
 
-	*//**
+	/**
 	 * @return HibernateTemplate() This is bean creation method for
 	 *         HibernateTemplate.
-	 *//*
+	 */
 	@Bean
 	public HibernateTemplate hibernateTemplate() {
 		HibernateTemplate ht=new HibernateTemplate(sessionFactory());
@@ -58,9 +58,9 @@ public class HibernateConfig {
 
 
 
-	*//**
+	/**
 	 * @return SessionFactory() This is bean creation method for SessionFactory.
-	 *//*
+	 */
 	@Bean
 	public SessionFactory sessionFactory() {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource());
@@ -74,14 +74,14 @@ public class HibernateConfig {
 
 
 
-	*//**
+	/**
 	 * @return HibernateTransactionManager() This is bean creation method for
 	 *         HibernateTransactionManager.
-	 *//*
+	 */
 	@Bean
 	@Primary
 	public HibernateTransactionManager hibTransMan() {
 		return new HibernateTransactionManager(sessionFactory());
-	}*/
+	}
 
 }
