@@ -17,8 +17,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="java"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -28,82 +27,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/SHREE/.m2/repository/org/springframework/spring-web/3.1.1.RELEASE/spring-web-3.1.1.RELEASE.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="org.springframework"/>
-			<attribute name="maven.artifactId" value="spring-web"/>
-			<attribute name="maven.version" value="3.1.1.RELEASE"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-aop-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-aop-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-aop-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-aspects-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-aspects-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-aspects-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-beans-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-beans-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-beans-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-build-src-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-context-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-context-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-context-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-context-support-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-context-support-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-context-support-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-core-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-core-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-core-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-expression-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-expression-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-expression-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-framework-bom-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-framework-bom-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-framework-bom-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-instrument-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-instrument-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-instrument-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-instrument-tomcat-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-instrument-tomcat-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-instrument-tomcat-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-jdbc-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-jdbc-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-jdbc-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-jms-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-jms-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-jms-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-messaging-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-messaging-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-messaging-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-orm-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-orm-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-orm-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-oxm-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-oxm-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-oxm-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-test-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-test-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-test-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-tx-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-tx-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-tx-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-web-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-web-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-web-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-webmvc-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-webmvc-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-webmvc-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-webmvc-portlet-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-webmvc-portlet-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-webmvc-portlet-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-websocket-4.0.0.RELEASE-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-websocket-4.0.0.RELEASE-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/spring-framework-4.0.0.RELEASE/libs/spring-websocket-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/jackson-annotations-2.6.3-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/jackson-core-2.6.3-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/jackson-databind-2.6.3-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/SHREE/Downloads/275/finalProject/mysql-connector-java-5.1.37/mysql-connector-java-5.1.37-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
