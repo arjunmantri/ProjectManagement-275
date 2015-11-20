@@ -16,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 
+
+
 /**
  * @author vtupe
  *Controller class for handling requests related to User entity.
@@ -24,8 +26,13 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/api/v1/*")
 public class UserController {
 
-	
-	
+	@RequestMapping(value="/user", method=RequestMethod.GET)
+	public ResponseEntity<String> getTest(){
+
+		return new ResponseEntity<String>("Mahesh, This is reply for your Test API !!!", HttpStatus.OK);
+
+	}
+
 
 
 
