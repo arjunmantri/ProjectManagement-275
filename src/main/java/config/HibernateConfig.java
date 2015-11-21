@@ -34,9 +34,9 @@ public class HibernateConfig {
 	public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(com.mysql.jdbc.Driver.class.getName());
-		dataSource.setUrl("jdbc:mysql://localhost:3306/lab2");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/projmgmt");
 		dataSource.setUsername("root");
-		dataSource.setPassword("12345");
+		dataSource.setPassword("admin");
 		dataSource.setInitialSize(2);
 		dataSource.setMaxTotal(5);
 		return dataSource;
@@ -67,6 +67,8 @@ public class HibernateConfig {
 		builder.scanPackages("*");
 		Properties hibernateProperties = new Properties();
 		hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		hibernateProperties.put("hibernate.show_sql", "true");       
+		hibernateProperties.put("hibernate.hbm2ddl.auto", "create");
 		builder.addProperties(hibernateProperties);
 		return builder.buildSessionFactory();
 		
