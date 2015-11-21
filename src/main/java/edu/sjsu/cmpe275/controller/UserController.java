@@ -1,4 +1,4 @@
-package controller;
+package edu.sjsu.cmpe275.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import dto.User;
+import edu.sjsu.cmpe275.dto.User;
 
 
 

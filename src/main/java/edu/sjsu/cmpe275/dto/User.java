@@ -1,4 +1,4 @@
-package dto;
+package edu.sjsu.cmpe275.dto;
 
 public class User {
 	
