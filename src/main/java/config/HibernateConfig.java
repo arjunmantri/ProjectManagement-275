@@ -34,9 +34,9 @@ public class HibernateConfig {
 	public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName(com.mysql.jdbc.Driver.class.getName());
-		dataSource.setUrl("jdbc:mysql://localhost:3306/lab2");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/projectmanagment");
 		dataSource.setUsername("root");
-		dataSource.setPassword("12345");
+		dataSource.setPassword("");
 		dataSource.setInitialSize(2);
 		dataSource.setMaxTotal(5);
 		return dataSource;
