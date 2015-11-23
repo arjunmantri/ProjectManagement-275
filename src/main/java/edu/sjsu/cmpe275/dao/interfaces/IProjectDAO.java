@@ -5,6 +5,6 @@ import edu.sjsu.cmpe275.dto.Project;
 
 public interface IProjectDAO {
 	
-	public void createProject(Project project);
+	//public void createProject(Project project);
 
 }

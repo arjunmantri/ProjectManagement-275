@@ -11,7 +11,7 @@ import edu.sjsu.cmpe275.service.interfaces.IProjectService;
 
 @Component
 public class ProjectServiceImpl implements IProjectService {
-
+/*
 	@Autowired
 	IProjectDAO projDao;
 	
@@ -22,7 +22,7 @@ public class ProjectServiceImpl implements IProjectService {
 		
 		return project;
 	}
-
+*/
 	
 	
 }

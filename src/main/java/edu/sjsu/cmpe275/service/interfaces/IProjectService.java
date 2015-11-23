@@ -4,6 +4,6 @@ import edu.sjsu.cmpe275.dto.Project;
 
 public interface IProjectService {
 	
-	public Project createPorject(Project project);
+	//public Project createPorject(Project project);
 
 }

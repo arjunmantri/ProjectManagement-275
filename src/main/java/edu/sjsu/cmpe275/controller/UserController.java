@@ -1,6 +1,7 @@
 package edu.sjsu.cmpe275.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,14 +21,15 @@ import edu.sjsu.cmpe275.service.impl.EmailServiceImpl;
 public  class UserController {
 	
 	@Autowired
-	private EmailServiceImpl smtpMailSender;
+	public EmailServiceImpl smtpMailSender;
 	
-	
-	@RequestMapping(method = RequestMethod.GET, value = "/user/{emailId}", produces = {
+
+	@RequestMapping(method = RequestMethod.GET, value = "/user/{toEmailId}/{userName}/{passWord}", produces = {
             MediaType.APPLICATION_JSON_VALUE})  
-	void retrievePollUsingPollId(@PathVariable String emailId) {
-		System.out.println("----------User Id----"+emailId);
-		smtpMailSender.sendEmail(emailId, "TestSubect", "TestBody");
+	void userSignUpEmail(@PathVariable String toEmailId, @PathVariable String userName, 
+			@PathVariable String passWord) {
+			String body = "Please click to the given link";
+			smtpMailSender.sendUserSignUpEmail(toEmailId, userName, passWord, body);
     }
 
 	
