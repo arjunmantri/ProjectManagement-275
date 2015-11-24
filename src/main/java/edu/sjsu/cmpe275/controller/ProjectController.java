@@ -21,9 +21,7 @@ public class ProjectController {
 	
 	@RequestMapping(value="/project", method=RequestMethod.POST)
 	public ResponseEntity<Project> createProject(@RequestBody Project project){
-
 		Project proj = projServ.createPorject(project);
-
 		return new ResponseEntity<Project>(proj, HttpStatus.OK);	
 	}
 

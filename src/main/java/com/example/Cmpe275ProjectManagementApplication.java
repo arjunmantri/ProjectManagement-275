@@ -7,7 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = { "com.example","controller","service","dao","dto","config","util","filter" })
+@ComponentScan(basePackages = { "com.example","edu.sjsu.cmpe275.controller","edu.sjsu.cmpe275.dao.impl",
+		"edu.sjsu.cmpe275.dto","config","util","filter" })
 @EnableAutoConfiguration
 @SpringBootApplication
 public class Cmpe275ProjectManagementApplication {

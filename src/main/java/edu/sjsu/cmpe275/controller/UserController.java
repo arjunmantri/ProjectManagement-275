@@ -1,42 +1,37 @@
 package edu.sjsu.cmpe275.controller;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
-import edu.sjsu.cmpe275.dto.User;
-
-
-
-
+import edu.sjsu.cmpe275.service.impl.EmailServiceImpl;
 
 /**
- * @author vtupe
- *Controller class for handling requests related to User entity.
+ * @author Team - 12
+ * Controller class for handling requests related to User entity.
  */
 @RestController
 @RequestMapping("/api/v1/*")
+@ComponentScan(basePackages = {"edu.sjsu.cmpe275.service.impl"})
 public  class UserController {
 	
+	@Autowired
+	private EmailServiceImpl smtpMailSender;
+
+	@RequestMapping(method = RequestMethod.GET, value = "/user/{emailId}", produces = {
+            MediaType.APPLICATION_JSON_VALUE})  
+	void retrievePollUsingPollId(@PathVariable String emailId) {
+		System.out.println("----------User Id----"+emailId);
+		smtpMailSender.sendEmail(emailId + ".com", "TestSubect", "TestBody");
+    }
+
+	
+	/*
 	JSONObject response = new JSONObject();
-	
-	
 	@RequestMapping(value = "/user", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody ResponseEntity<String> getTest(@RequestBody User reqPar){
 		String userName = reqPar.getUserName();
@@ -49,9 +44,5 @@ public  class UserController {
 			}
 	    return new ResponseEntity<String>(response.toString(),HttpStatus.OK); 
 
-	}
-
-
-
-
+	} */
 }
