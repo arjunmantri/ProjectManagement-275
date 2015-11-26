@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package config;
 
@@ -8,27 +8,27 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.hibernate.FlushMode;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import edu.sjsu.cmpe275.dto.User;
+
 
 /**
- * @author vtupe
- *Hibernate configuration class consists of
- *data source related configuration details
+ * @author Team - 3
+ * Hibernate configuration class consists of data source related configuration details
  */
 
 @Configuration
+@ComponentScan({ "config" })
 @EnableTransactionManagement
 public class HibernateConfig {
-
 
 	@Bean
 	public DataSource dataSource() {
@@ -37,56 +37,38 @@ public class HibernateConfig {
 		dataSource.setUrl("jdbc:mysql://localhost:3306/projectmanagment");
 		dataSource.setUsername("root");
 		dataSource.setPassword("");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/projectmanagment");
-		dataSource.setUsername("root");
-		dataSource.setPassword("");
 		dataSource.setInitialSize(2);
 		dataSource.setMaxTotal(5);
 		return dataSource;
 	}
 
-
-
-	/**
-	 * @return HibernateTemplate() This is bean creation method for
-	 *         HibernateTemplate.
-	 */
-	@Bean
-	public HibernateTemplate hibernateTemplate() {
-		HibernateTemplate ht=new HibernateTemplate(sessionFactory());
-		ht.getSessionFactory().getCurrentSession().setFlushMode(FlushMode.AUTO);
-		return ht;
-
-	}
-
-
-
 	/**
 	 * @return SessionFactory() This is bean creation method for SessionFactory.
 	 */
-	@Bean
+	@Autowired
+	@Bean(name = "sessionFactory")
 	public SessionFactory sessionFactory() {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource());
-		builder.scanPackages("*");
+		builder.addAnnotatedClass(User.class);
 		Properties hibernateProperties = new Properties();
 		hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-		hibernateProperties.put("hibernate.show_sql", "true");       
+		hibernateProperties.put("hibernate.show_sql", "true");
 		hibernateProperties.put("hibernate.hbm2ddl.auto", "create");
 		builder.addProperties(hibernateProperties);
 		return builder.buildSessionFactory();
-		
+
 	}
-
-
 
 	/**
 	 * @return HibernateTransactionManager() This is bean creation method for
 	 *         HibernateTransactionManager.
 	 */
+	@Autowired
 	@Bean
-	@Primary
-	public HibernateTransactionManager hibTransMan() {
-		return new HibernateTransactionManager(sessionFactory());
+	public HibernateTransactionManager hibTransMan(SessionFactory s) {
+		HibernateTransactionManager txManager = new HibernateTransactionManager();
+		txManager.setSessionFactory(s);
+		return txManager;
 	}
 
 }

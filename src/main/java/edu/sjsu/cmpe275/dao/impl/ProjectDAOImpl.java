@@ -8,18 +8,7 @@ import edu.sjsu.cmpe275.dao.interfaces.IProjectDAO;
 import edu.sjsu.cmpe275.dto.Project;
 
 
-@Repository("projectDAOImpl")
 public class ProjectDAOImpl implements IProjectDAO{
 
-	@Autowired
-	HibernateTemplate htemplate;
-	
-	@Override
-	public void createProject(Project project) {
-		// TODO Auto-generated method stub
-		
-		htemplate.save(project);
-		
-	}
 
 }

@@ -16,13 +16,14 @@ import edu.sjsu.cmpe275.service.interfaces.IProjectService;
 @RequestMapping("/api/pc/*")
 public class ProjectController {
 	
+	/*
 	@Autowired
 	IProjectService projServ;
 	
 	@RequestMapping(value="/project", method=RequestMethod.POST)
 	public ResponseEntity<Project> createProject(@RequestBody Project project){
 		Project proj = projServ.createPorject(project);
-		return new ResponseEntity<Project>(proj, HttpStatus.OK);	
-	}
+		return new ResponseEntity<Project>(proj, HttpStatus.OK);
+	}*/
 
 }

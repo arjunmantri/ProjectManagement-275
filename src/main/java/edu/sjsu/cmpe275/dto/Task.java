@@ -1,36 +1,57 @@
 package edu.sjsu.cmpe275.dto;
+import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
+//Follow pascal casing for the column names.
+import javax.persistence.*;
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
-public class Task {
-	
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private long id;
-	
+@Entity
+@Table(name = "Tasks")
+@Service
+public class Task implements Serializable{
+
+    private static final long serialVersionUID = 1L;
+
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="TaskId")
+    @NotNull
+    private long TaskId;
+
+	@Column(name = "TaskTitle")
+	@NotNull
 	private String title;
-	
+
+	@Column(name = "TaskDescription")
+	@NotNull
 	private String description;
-	
+
+	@Column(name = "TaskAssignee")
+	@NotNull
 	private String assignee;
-	
+
+	@Column(name = "TaskState")
+	@NotNull
 	private String state;
-	
+
+	@Column(name = "TaskEstimate")
+	@NotNull
 	private int estimate;
-	
+
+	@Column(name = "TaskActual")
+	@NotNull
 	private int actual;
 
 	public long getId() {
-		return id;
+		return TaskId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setId(long TaskId) {
+		this.TaskId = TaskId;
 	}
 
 	public String getTitle() {

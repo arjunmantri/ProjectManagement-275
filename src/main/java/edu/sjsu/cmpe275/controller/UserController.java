@@ -1,6 +1,7 @@
 package edu.sjsu.cmpe275.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,20 +17,21 @@ import edu.sjsu.cmpe275.service.impl.EmailServiceImpl;
  */
 @RestController
 @RequestMapping("/api/v1/*")
-@ComponentScan(basePackages = {"edu.sjsu.cmpe275.service.impl"})
-public  class UserController {
-	
+public class UserController {
+
 	@Autowired
-	private EmailServiceImpl smtpMailSender;
+	public EmailServiceImpl smtpMailSender;
 
-	@RequestMapping(method = RequestMethod.GET, value = "/user/{emailId}", produces = {
-            MediaType.APPLICATION_JSON_VALUE})  
-	void retrievePollUsingPollId(@PathVariable String emailId) {
-		System.out.println("----------User Id----"+emailId);
-		smtpMailSender.sendEmail(emailId + ".com", "TestSubect", "TestBody");
-    }
+	@RequestMapping(method = RequestMethod.POST, value = "/user/{toEmailId}/{userName}/{passWord}",
+			produces = {MediaType.APPLICATION_JSON_VALUE})
+	void userSignUpEmail(@PathVariable String toEmailId,
+						 @PathVariable String userName,
+						 @PathVariable String passWord) {
+		String body = "Please click to the given link";
+		smtpMailSender.sendUserSignUpEmail(toEmailId, userName, passWord, body);
+	}
 
-	
+
 	/*
 	JSONObject response = new JSONObject();
 	@RequestMapping(value = "/user", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -42,7 +44,6 @@ public  class UserController {
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
-	    return new ResponseEntity<String>(response.toString(),HttpStatus.OK); 
-
+	    return new ResponseEntity<String>(response.toString(),HttpStatus.OK);
 	} */
 }
