@@ -51,7 +51,6 @@ public class HibernateConfig {
 	@Bean(name = "sessionFactory")
 	public SessionFactory sessionFactory() {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource());
-		builder.addAnnotatedClass(User.class);
 		Properties hibernateProperties = new Properties();
 		hibernateProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		hibernateProperties.put("hibernate.show_sql", "true");

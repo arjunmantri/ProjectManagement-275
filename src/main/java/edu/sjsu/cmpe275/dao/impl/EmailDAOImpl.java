@@ -22,14 +22,11 @@ public class EmailDAOImpl implements IEmailDao {
 	
 	@Override
 	public void createUserSignUp(User user) {
-	System.out.println("-----createUserSignUp--------");
-	sessionFactory.getCurrentSession().save(user);
-		
+		sessionFactory.getCurrentSession().save(user);
 	}
 
 	@Override
 	public User getUserDetail(String emailId) {
-		System.out.println("-----getUserDetail--------");
 		return (User) sessionFactory.getCurrentSession().get(User.class, emailId);
     }
 
@@ -45,15 +42,14 @@ public class EmailDAOImpl implements IEmailDao {
 	
 	@Override
 	public void updateUser(User updatedUser) {
-		System.out.println("---------updateUser---start--------");
 		sessionFactory.getCurrentSession().merge(updatedUser);
-		System.out.println("---------updateUser---end----successfully----");
 	}
 	
 	@Override
 	public User userSignIn(String userName, String password) {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
-		criteria.add(Restrictions.and(Restrictions.eq("userName", userName), Restrictions.eq("password", password)));
+		criteria.add(Restrictions.and(Restrictions.eq("userName", userName),
+				Restrictions.eq("password", password)));
 		List<User> user =  criteria.list();
 		if(user.size() != 0) {
 			return user.get(0);
@@ -71,5 +67,4 @@ public class EmailDAOImpl implements IEmailDao {
 		}
 		return false;
 	}
-	
 }

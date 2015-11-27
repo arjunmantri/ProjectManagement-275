@@ -1,8 +1,5 @@
 package edu.sjsu.cmpe275.service.interfaces;
 
-import org.springframework.stereotype.Component;
-
-
 public interface IEmailService {
 	
 	void sendUserSignUpEmail (String toEmail, String password, String userName, String body);

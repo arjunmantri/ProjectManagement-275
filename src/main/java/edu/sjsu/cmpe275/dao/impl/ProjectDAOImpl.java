@@ -23,14 +23,12 @@ public class ProjectDAOImpl implements IProjectDAO {
 	
 	@Override
 	public Project createProject(Project project) {
-		System.out.println("-----createProject--------");
 		long id1 = (Long) sessionFactory.getCurrentSession().save(project);
 		return getProjectById(id1);
 	}
 	
 	@Override
 	public Project getProjectById(long Id) {
-		System.out.println("-----getUserDetail--------");
 		return (Project) sessionFactory.getCurrentSession().get(Project.class, Id);
     }
 	
@@ -41,4 +39,3 @@ public class ProjectDAOImpl implements IProjectDAO {
 		return  criteria.list();
 	}
 }
-
