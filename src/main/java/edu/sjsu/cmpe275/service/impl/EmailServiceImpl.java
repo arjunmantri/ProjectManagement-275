@@ -47,7 +47,6 @@ public class EmailServiceImpl {//implements IEmailService {
 		user.setUserName(userName);
 		user.setHashCode(toEmail.hashCode());
 		if(isUserExist(toEmail)) {
-			System.out.println("--------Updating User Email Id"+toEmail);
 			emailDaoImpl.updateUser(user);
 		} else {
 			emailDaoImpl.createUserSignUp(user);
@@ -60,7 +59,7 @@ public class EmailServiceImpl {//implements IEmailService {
 				messageHelper.setTo(toEmail);
 				messageHelper.setSubject("Welcome to project management tool.");
 				messageHelper.setText(body, true);
-				//javaMailSender.send(message);
+				javaMailSender.send(message);
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}
@@ -71,7 +70,6 @@ public class EmailServiceImpl {//implements IEmailService {
 		User user = emailDaoImpl.getUserDetail(emaild);
 		if(user!= null && (user.getHashCode().equals(hashCode)) && emaild.equals(user.getEmail())) {
 			user.setValidated("true");
-			System.out.println("----Call for update---");
 		} else {
 			return false;
 		}

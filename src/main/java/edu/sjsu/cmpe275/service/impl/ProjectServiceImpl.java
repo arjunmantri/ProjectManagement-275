@@ -34,11 +34,14 @@ public class ProjectServiceImpl  {
 		project.setState(state);
 		project.setTitle(title);
 		project.setProjectOwnerEmail(projectOwnerEmail);
-		//projectDao.createProjectVoid(project);
 		return projectDao.createProject(project);
 	}
 	
 	public List<Project> getAllProjectByEmailId(String emailId) {
 		return projectDao.getAllProjectByEmailId(emailId);
+	}
+	
+	public void updateProject(Project project) {
+		projectDao.updateProject(project);
 	}
 }

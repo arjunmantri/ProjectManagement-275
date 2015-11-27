@@ -9,4 +9,5 @@ public interface IProjectDAO {
 	Project createProject(Project project);
 	Project getProjectById(long Id);
 	List<Project> getAllProjectByEmailId(String emailId);
+	void updateProject(Project project);
 }

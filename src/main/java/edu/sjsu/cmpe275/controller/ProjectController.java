@@ -1,6 +1,7 @@
 package edu.sjsu.cmpe275.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.sjsu.cmpe275.dto.Project;
+import edu.sjsu.cmpe275.dto.Task;
 import edu.sjsu.cmpe275.service.impl.ProjectServiceImpl;
 
 @RestController
@@ -39,6 +41,15 @@ public class ProjectController {
 	public ResponseEntity<List<Project>> getAllProjectByEmailId(
 			@PathVariable String emailId) {
 		List<Project> proj = projectServiceImpl.getAllProjectByEmailId(emailId);
+		for(Project project : proj) {
+			Set<Task> tasks= project.getTasks();
+			for(Task taskone : tasks) {
+				System.out.println(taskone.getActual());
+				System.out.println(taskone.getDescription());
+				System.out.println(taskone.getEstimate());
+			}
+		
+		}
 		return new ResponseEntity<List<Project>>(proj, HttpStatus.OK);
 	}
 }

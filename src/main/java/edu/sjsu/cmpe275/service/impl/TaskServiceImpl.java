@@ -1,8 +1,11 @@
 package edu.sjsu.cmpe275.service.impl;
 
 import config.HibernateConfig;
+import edu.sjsu.cmpe275.dao.impl.ProjectDAOImpl;
 import edu.sjsu.cmpe275.dao.impl.TaskDAOImpl;
+import edu.sjsu.cmpe275.dto.Project;
 import edu.sjsu.cmpe275.dto.Task;
+
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import edu.sjsu.cmpe275.service.interfaces.ITaskService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -18,7 +22,15 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 
+
+
+
+
+
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
@@ -30,19 +42,28 @@ public class TaskServiceImpl{
 
     @Autowired
     TaskDAOImpl taskDAOImpl;
+    
+    @Autowired
+    ProjectDAOImpl projectDAOImpl;
 
     @Autowired
     Task task;
 
-    public void createTaskService(String TaskTitle, String TaskDescription, String TaskAssignee, String TaskState, int TaskEstimate, int TaskActual){
-        Task task = new Task();
-        task.setTitle(TaskTitle);
+    public void createTaskService(String TaskTitle, String TaskDescription, String TaskAssignee, String TaskState, int TaskEstimate, int TaskActual, long ProjectId){
+       // Task task = new Task();
+    	Project project = projectDAOImpl.getProjectById(ProjectId);
+    	task.setTitle(TaskTitle);
         task.setDescription(TaskDescription);
         task.setAssignee(TaskAssignee);
         task.setState(TaskState);
         task.setEstimate(TaskEstimate);
         task.setActual(TaskActual);
+        
+        Set <Task> taskList = project.getTasks();
+        taskList.add(task);
+        projectDAOImpl.updateProject(project);
         taskDAOImpl.createTaskDAO(task);
+
     }
 
     //@Transactional

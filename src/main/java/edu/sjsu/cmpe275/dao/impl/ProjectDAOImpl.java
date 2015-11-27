@@ -36,6 +36,12 @@ public class ProjectDAOImpl implements IProjectDAO {
 	public List<Project> getAllProjectByEmailId(String emailId) {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Project.class);
 		criteria.add(Restrictions.eq("projectOwnerEmail", emailId));
+		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);  
 		return  criteria.list();
+	}
+	
+	@Override
+	public void updateProject(Project project) {
+		sessionFactory.getCurrentSession().save(project);
 	}
 }

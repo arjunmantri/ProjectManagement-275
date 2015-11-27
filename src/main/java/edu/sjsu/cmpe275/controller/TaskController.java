@@ -17,18 +17,18 @@ public class TaskController {
     @Autowired
     public TaskServiceImpl taskServiceImpl;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/{TaskTitle}/{TaskDescription}/{TaskAssignee}/{TaskState}/{TaskEstimate}/{TaskActual}",
+    @RequestMapping(method = RequestMethod.POST, value = "/{TaskTitle}/{TaskDescription}/{TaskAssignee}/{TaskState}/{TaskEstimate}/{TaskActual}/{ProjectId}",
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public Response createTaskController(@PathVariable String TaskTitle,
                                          @PathVariable String TaskDescription,
                                          @PathVariable String TaskAssignee,
                                          @PathVariable String TaskState,
                                          @PathVariable int TaskEstimate,
-                                         @PathVariable int TaskActual) {
+                                         @PathVariable int TaskActual,
+                                         @PathVariable long ProjectId) {
         System.out.println("inside post request");
-        taskServiceImpl.createTaskService(TaskTitle, TaskDescription, TaskAssignee, TaskState, TaskEstimate, TaskActual);
+        taskServiceImpl.createTaskService(TaskTitle, TaskDescription, TaskAssignee, TaskState, TaskEstimate, TaskActual, ProjectId);
         return null;
-        //return Response.status(Response.Status.OK).entity().build();
     }
 
 
