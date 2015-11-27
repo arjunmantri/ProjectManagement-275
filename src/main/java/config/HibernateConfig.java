@@ -7,6 +7,8 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import edu.sjsu.cmpe275.dto.Project;
+import edu.sjsu.cmpe275.dto.Task;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +57,9 @@ public class HibernateConfig {
 		hibernateProperties.put("hibernate.show_sql", "true");
 		hibernateProperties.put("hibernate.hbm2ddl.auto", "create");
 		builder.addProperties(hibernateProperties);
+		builder.addAnnotatedClasses(Task.class);
+		builder.addAnnotatedClasses(User.class);
+		builder.addAnnotatedClasses(Project.class);
 		return builder.buildSessionFactory();
 
 	}
@@ -70,5 +75,4 @@ public class HibernateConfig {
 		txManager.setSessionFactory(s);
 		return txManager;
 	}
-
 }

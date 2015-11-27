@@ -20,6 +20,4 @@ public class EmailDAOImpl implements IEmailDao {
 		sessionFactory.getCurrentSession().save(user);
 
 	}
-
-
 }

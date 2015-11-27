@@ -14,6 +14,7 @@ import edu.sjsu.cmpe275.service.interfaces.ITaskService;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -21,13 +22,17 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
+@Transactional
 @ComponentScan(basePackages = {"edu.sjsu.cmpe275.*"})
-@EnableTransactionManagement
-//@Transactional
-public class TaskServiceImpl implements ITaskService{
+//@Transactional(propagation = Propagation.SUPPORTS)
+//public class TaskServiceImpl implements ITaskService{
+public class TaskServiceImpl{
 
     @Autowired
     TaskDAOImpl taskDAOImpl;
+
+    @Autowired
+    Task task;
 
     public void createTaskService(String TaskTitle, String TaskDescription, String TaskAssignee, String TaskState, int TaskEstimate, int TaskActual){
         Task task = new Task();
@@ -40,8 +45,28 @@ public class TaskServiceImpl implements ITaskService{
         taskDAOImpl.createTaskDAO(task);
     }
 
-    public List<Task> GetTaskService(){
-        return taskDAOImpl.GetTasksDAO();
+    //@Transactional
+    public List<Task> getAllTaskService(){
+        return taskDAOImpl.getAllTasksDAO();
     }
 
+    public Task deleteTaskService(long TaskId){
+        Task task = new Task();
+        taskDAOImpl.deleteTaskDAO(TaskId);
+        return task;
+    }
+
+    public Task stateChangeTaskService(long taskId) {
+        Task task = new Task();
+        taskDAOImpl.stateChangeTaskDAO();
+        return null;
+    }
+//
+//    public Task getTaskService(long TaskId){
+//        return taskDAOImpl.getTaskDAO(TaskId);
+//    }
+//
+//    public boolean doesTaskExistsService(long TaskId){
+//        return
+//    }
 }
