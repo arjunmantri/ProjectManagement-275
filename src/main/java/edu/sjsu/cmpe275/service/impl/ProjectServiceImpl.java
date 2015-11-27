@@ -1,28 +1,44 @@
 package edu.sjsu.cmpe275.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import edu.sjsu.cmpe275.dao.impl.ProjectDAOImpl;
 import edu.sjsu.cmpe275.dao.interfaces.IProjectDAO;
 import edu.sjsu.cmpe275.dto.Project;
 import edu.sjsu.cmpe275.service.interfaces.IProjectService;
 
 
-@Component
-public class ProjectServiceImpl implements IProjectService {
-/*
-	@Autowired
-	IProjectDAO projDao;
+@Service
+@ComponentScan(basePackages = {"edu.sjsu.cmpe275.*"})
+@Transactional
+public class ProjectServiceImpl  {
 	
-	@Override
-	public Project createPorject(Project project) {
-		// TODO Auto-generated method stub
+	ProjectServiceImpl() {
 		
-		
-		return project;
 	}
-*/
-
-
+	
+	@Autowired 
+	public ProjectDAOImpl projectDao;
+	
+	@Autowired
+	public Project project;
+	
+	public Project createPorject(String title, String description, String state, String projectOwnerEmail) {
+		project.setDescription(description);
+		project.setState(state);
+		project.setTitle(title);
+		project.setProjectOwnerEmail(projectOwnerEmail);
+		//projectDao.createProjectVoid(project);
+		return projectDao.createProject(project);
+	}
+	
+	public List<Project> getAllProjectByEmailId(String emailId) {
+		return projectDao.getAllProjectByEmailId(emailId);
+	}
 }

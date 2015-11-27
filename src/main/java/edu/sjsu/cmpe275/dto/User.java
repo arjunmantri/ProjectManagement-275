@@ -14,34 +14,32 @@ import org.springframework.stereotype.Service;
 @Table(name = "USER")
 @Service
 public class User implements Serializable {
-	/**
-	 *
-	 */
+
 	private static final long serialVersionUID = 1L;
 
 	User() {
-
 	}
-	@Column(name="USER_NAME")
+	
+	@Column(name="USER_NAME") 
 	@NotNull
 	private String userName;
-
-	@Column(name="PASSWORD")
+	
+	@Column(name="PASSWORD") 
 	@NotNull
 	private String password;
-
+	
 	@Id
 	@Column(name="EMAIL")
 	@NotNull
 	private String email;
-
+	
 	@Column(name="HASHCODE")
 	@NotNull
 	private Integer hashCode;
-
+	
 	@Column(name="Validated")
 	private String validated = "false";
-
+	
 	public String getUserName() {
 		return userName;
 	}

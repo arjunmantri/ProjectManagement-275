@@ -3,7 +3,19 @@ package edu.sjsu.cmpe275.service.interfaces;
 import edu.sjsu.cmpe275.dto.Project;
 
 public interface IProjectService {
-
-	//public Project createPorject(Project project);
+	
+	Project createPorject(Project project);
+	
+	Project getAllProjectByEmailId(String emailId);
+	
+	// Only the owner can cancel the project State should be in new, planning, completed state
+	Project cancelProject(Project project);
+	
+	// Only owner can move the project to completed state 
+	// If every taks is in finished state.
+	// If every taks is in cancelled state.
+	// One task is in finished state and all others are in cancelled state.
+	// Once the task is in finished or in completed state it cannot be changed any more.
+	Project stateUpdateOfProject(Project project);
 
 }
