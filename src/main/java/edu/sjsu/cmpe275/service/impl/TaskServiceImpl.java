@@ -77,10 +77,18 @@ public class TaskServiceImpl{
         return task;
     }
 
-    public Task stateChangeTaskService(long taskId) {
-        Task task = new Task();
-        taskDAOImpl.stateChangeTaskDAO();
-        return null;
+    public Task stateChangeTaskService(long TaskId, String TaskState) {
+        task = taskDAOImpl.getTaskDAO(TaskId);
+        task.setState(TaskState);
+        taskDAOImpl.stateChangeTaskDAO(task);
+        return task;
+    }
+
+    public Task changeAssigneeTaskService(long TaskId, String TaskTitle, String TaskAssignee) {
+        task = taskDAOImpl.getTaskDAO(TaskId);
+        task.setAssignee(TaskAssignee);
+        taskDAOImpl.changeAssigneeTaskDAO(task);
+        return task;
     }
 //
 //    public Task getTaskService(long TaskId){

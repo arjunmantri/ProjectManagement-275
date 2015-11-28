@@ -53,9 +53,19 @@ public class TaskDAOImpl implements ITaskDAO {
         return task;
     }
 
-    public void stateChangeTaskDAO() {
-        
+    public Task stateChangeTaskDAO(Task task) {
+        //Task task = getTaskDAO(TaskId);
+        sessionFactory.getCurrentSession().merge(task);
+        sessionFactory.getCurrentSession().update(task);
+        return task;
     }
+    
+    public Task changeAssigneeTaskDAO(Task task) {
+        sessionFactory.getCurrentSession().merge(task);
+        sessionFactory.getCurrentSession().update(task);
+        return task;
+    }
+
 //    only delete a task when projectId are same and task is in planning state.
 //    public Task deleteTaskDAO1(long TaskId, long ProjectId) {
 //        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);

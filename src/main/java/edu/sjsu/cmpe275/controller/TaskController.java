@@ -44,11 +44,23 @@ public class TaskController {
         return taskServiceImpl.deleteTaskService(TaskId);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/tasks/{TaskId}",
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/tasks/{TaskId}/{TaskState}",
             produces = {MediaType.APPLICATION_JSON_VALUE})
-    public Task stateChangeTaskController(@PathVariable long TaskId){
-        return taskServiceImpl.stateChangeTaskService(TaskId);
+    public Task stateChangeTaskController(@PathVariable long TaskId,
+                                          @PathVariable String TaskState){
+        return taskServiceImpl.stateChangeTaskService(TaskId, TaskState);
     }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/tasks/{TaskId}/{TaskTitle}/{TaskAssignee}",
+            produces = {MediaType.APPLICATION_JSON_VALUE})
+    public Task changeTaskAssigneeController(@PathVariable long TaskId,
+                                             @PathVariable String TaskTitle,
+                                             @PathVariable String TaskAssignee){
+        return taskServiceImpl.changeAssigneeTaskService(TaskId, TaskTitle, TaskAssignee);
+    }
+
+
 
 
 }

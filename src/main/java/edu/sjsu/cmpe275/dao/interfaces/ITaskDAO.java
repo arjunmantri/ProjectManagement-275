@@ -12,5 +12,6 @@ public interface ITaskDAO {
     public List<Task> getAllTasksDAO();
     public Task getTaskDAO(long TaskTitle);
     public Task deleteTaskDAO(long TaskTitle);
-    public void stateChangeTaskDAO();
+    public Task stateChangeTaskDAO(Task task);
+    public Task changeAssigneeTaskDAO(Task task);
 }
