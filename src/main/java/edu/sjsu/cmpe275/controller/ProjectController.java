@@ -27,13 +27,14 @@ public class ProjectController {
 	
 	@RequestMapping(method=RequestMethod.POST, value="/project/{title}/{description}/{state}/{projectOwnerEmail}",
 			produces = {MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity<Project> createProject(
+	public ResponseEntity<List<Project>> createProject(
 			@PathVariable String title, 
 			@PathVariable String description,
 			@PathVariable String state,
 			@PathVariable String projectOwnerEmail) {
 			Project proj = projectServiceImpl.createPorject(title, description, state, projectOwnerEmail);
-			return new ResponseEntity<Project>(proj, HttpStatus.OK);
+			List<Project> allProject = projectServiceImpl.getAllProjectByEmailId(projectOwnerEmail);
+			return new ResponseEntity<List<Project>>(allProject, HttpStatus.OK);
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/project/{emailId}",
