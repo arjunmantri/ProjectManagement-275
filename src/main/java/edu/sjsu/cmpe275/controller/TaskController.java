@@ -11,13 +11,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
-@RequestMapping("/api/tc/*")
+@RequestMapping("/api/v1/*")
 public class TaskController {
 
     @Autowired
     public TaskServiceImpl taskServiceImpl;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/{TaskTitle}/{TaskDescription}/{TaskAssignee}/{TaskState}/{TaskEstimate}/{TaskActual}/{ProjectId}",
+    @RequestMapping(method = RequestMethod.POST, value = "/{TaskTitle}/{TaskDescription}/{TaskAssignee}/{TaskState}/{TaskEstimate}/{TaskActual}/{ProjectId}/",
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public Response createTaskController(@PathVariable String TaskTitle,
                                          @PathVariable String TaskDescription,
@@ -32,7 +32,7 @@ public class TaskController {
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/tasks",
+    @RequestMapping(method = RequestMethod.GET, value = "/tasks/",
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<Task> getTaskController(){
         return taskServiceImpl.getAllTaskService();

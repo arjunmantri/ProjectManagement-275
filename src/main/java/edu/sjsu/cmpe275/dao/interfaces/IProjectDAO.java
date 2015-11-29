@@ -11,4 +11,5 @@ public interface IProjectDAO {
 	List<Project> getAllProjectByEmailId(String emailId);
 	void updateProject(Project project);
 	List<Project> deleteProject(long id, String emailId);
+	void updateByProjectId(long id, String state);
 }

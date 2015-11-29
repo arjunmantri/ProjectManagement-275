@@ -48,4 +48,8 @@ public class ProjectServiceImpl  {
 	public List<Project> deleteProject(long id, String emailId) {
 		return projectDao.deleteProject(id, emailId);
 	}
+	
+	public void updateByProjectId(long id, String state) {
+		projectDao.updateByProjectId(id, state);
+	}
 }

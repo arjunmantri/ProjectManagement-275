@@ -34,8 +34,9 @@ public class ProjectDAOImpl implements IProjectDAO {
 	
 	@Override
 	public List<Project> getAllProjectByEmailId(String emailId) {
+		System.out.println("--------------getAllProjectByEmailId------------>>"+emailId);
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Project.class);
-		criteria.add(Restrictions.eq("projectOwnerEmail", emailId));
+		criteria.add(Restrictions.eq("projectOwnerEmail", emailId.trim()));
 		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);  
 		return  criteria.list();
 	}
@@ -51,5 +52,12 @@ public class ProjectDAOImpl implements IProjectDAO {
 		sessionFactory.getCurrentSession().delete(projectToBeDeleted);
 		List<Project> allProjects = getAllProjectByEmailId(emailId);
 		return allProjects;
+	}
+	
+	@Override
+	public void updateByProjectId(long id, String state) {
+		Project project = getProjectById(id);
+		project.setState(state);
+		updateProject(project);
 	}
 }
