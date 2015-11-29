@@ -1,13 +1,17 @@
 package edu.sjsu.cmpe275.controller;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.sjsu.cmpe275.dto.Project;
 import edu.sjsu.cmpe275.service.impl.EmailServiceImpl;
 
 /**
@@ -25,11 +29,11 @@ public  class UserController {
 
 	@RequestMapping(method = RequestMethod.POST, value = "/user/{toEmailId}/{userName}/{passWord}", 
 			produces = {MediaType.APPLICATION_JSON_VALUE})  
-	void userSignUpEmail(
+	public ResponseEntity<String> userSignUpEmail(
 			@PathVariable String toEmailId, 
 			@PathVariable String userName, 
 			@PathVariable String passWord) {
-			String body = "Please click to the given link";
+			String body = "Please click to the given link for http://localhost:3000/thome/" + toEmailId;
 			if(smtpMailSender.isUserValidated(toEmailId, passWord, userName)) {
 				System.out.println("----User is already validated-----");
 				// URL for home Page set success code for showing the home page
@@ -37,6 +41,9 @@ public  class UserController {
 				System.out.println("----User is not validated sends an email----");
 				smtpMailSender.sendUserSignUpEmail(toEmailId, userName, passWord, body);
 			}
+			JSONObject response = new JSONObject();
+			response.put("EmailSend", "SendSuccessfully");
+			return new ResponseEntity<String>(response.toString() , HttpStatus.OK);
 		// return success code that please click the email for validation
     }
 

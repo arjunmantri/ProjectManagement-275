@@ -42,6 +42,6 @@ public class ProjectDAOImpl implements IProjectDAO {
 	
 	@Override
 	public void updateProject(Project project) {
-		sessionFactory.getCurrentSession().save(project);
+		sessionFactory.getCurrentSession().update(project);
 	}
 }
