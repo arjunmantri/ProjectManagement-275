@@ -44,4 +44,12 @@ public class ProjectDAOImpl implements IProjectDAO {
 	public void updateProject(Project project) {
 		sessionFactory.getCurrentSession().update(project);
 	}
+	
+	@Override
+	public List<Project> deleteProject(long id, String emailId) {
+		Project projectToBeDeleted = getProjectById(id);
+		sessionFactory.getCurrentSession().delete(projectToBeDeleted);
+		List<Project> allProjects = getAllProjectByEmailId(emailId);
+		return allProjects;
+	}
 }

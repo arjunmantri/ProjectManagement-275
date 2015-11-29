@@ -53,4 +53,13 @@ public class ProjectController {
 		}
 		return new ResponseEntity<List<Project>>(proj, HttpStatus.OK);
 	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/project/{Id}/{emailId}",
+			produces = {MediaType.APPLICATION_JSON_VALUE})
+	public ResponseEntity<List<Project>> deleteProjectById(
+			@PathVariable long Id,
+			@PathVariable String emailId) {
+		List<Project> proj =  projectServiceImpl.deleteProject(Id, emailId);
+		return new ResponseEntity<List<Project>>(proj, HttpStatus.OK);
+	}
 }

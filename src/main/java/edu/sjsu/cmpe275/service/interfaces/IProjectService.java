@@ -1,5 +1,7 @@
 package edu.sjsu.cmpe275.service.interfaces;
 
+import java.util.List;
+
 import edu.sjsu.cmpe275.dto.Project;
 
 public interface IProjectService {
@@ -17,5 +19,7 @@ public interface IProjectService {
 	// One task is in finished state and all others are in cancelled state.
 	// Once the task is in finished or in completed state it cannot be changed any more.
 	Project stateUpdateOfProject(Project project);
+	
+	List<Project> deleteProject(long id, String emailId);
 
 }
