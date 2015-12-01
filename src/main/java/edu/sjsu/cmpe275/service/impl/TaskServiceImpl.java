@@ -27,6 +27,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -58,6 +59,7 @@ public class TaskServiceImpl{
         task.setState(TaskState);
         task.setEstimate(TaskEstimate);
         task.setActual(TaskActual);
+        task.setProjectId(ProjectId);
         
         Set <Task> taskList = project.getTasks();
         taskList.add(task);

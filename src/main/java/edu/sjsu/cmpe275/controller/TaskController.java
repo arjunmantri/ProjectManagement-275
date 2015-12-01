@@ -2,11 +2,14 @@ package edu.sjsu.cmpe275.controller;
 
 import edu.sjsu.cmpe275.dto.Task;
 import edu.sjsu.cmpe275.service.impl.TaskServiceImpl;
+
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -19,16 +22,16 @@ public class TaskController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/{TaskTitle}/{TaskDescription}/{TaskAssignee}/{TaskState}/{TaskEstimate}/{TaskActual}/{ProjectId}/",
             produces = {MediaType.APPLICATION_JSON_VALUE})
-    public Response createTaskController(@PathVariable String TaskTitle,
+    @ResponseStatus(HttpStatus.OK)
+    public void createTaskController(@PathVariable String TaskTitle,
                                          @PathVariable String TaskDescription,
                                          @PathVariable String TaskAssignee,
                                          @PathVariable String TaskState,
                                          @PathVariable int TaskEstimate,
                                          @PathVariable int TaskActual,
                                          @PathVariable long ProjectId) {
-        System.out.println("inside post request");
-        taskServiceImpl.createTaskService(TaskTitle, TaskDescription, TaskAssignee, TaskState, TaskEstimate, TaskActual, ProjectId);
-        return null;
+     taskServiceImpl.createTaskService(TaskTitle, TaskDescription, TaskAssignee, TaskState, TaskEstimate, TaskActual, ProjectId);
+       
     }
 
 
@@ -60,7 +63,7 @@ public class TaskController {
         return taskServiceImpl.changeAssigneeTaskService(TaskId, TaskTitle, TaskAssignee);
     }
 
-
-
+    
+    
 
 }

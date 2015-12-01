@@ -45,6 +45,10 @@ public class Task implements Serializable{
 	@Column(name = "TaskActual")
 	@NotNull
 	private int actual;
+	
+	@Column(name = "ProjectId")
+	@NotNull
+	private long projectId;
 
 	public long getId() {
 		return TaskId;
@@ -101,5 +105,12 @@ public class Task implements Serializable{
 	public void setActual(int actual) {
 		this.actual = actual;
 	}
+	
+	public long getProjectId() {
+		return projectId;
+	}
 
+	public void setProjectId(long projectId) {
+		this.projectId = projectId;
+	}
 }

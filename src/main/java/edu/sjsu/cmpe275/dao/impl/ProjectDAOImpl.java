@@ -60,4 +60,10 @@ public class ProjectDAOImpl implements IProjectDAO {
 		project.setState(state);
 		updateProject(project);
 	}
+	
+	
+	@Override
+	public List<Project> getAllProjectForAssignedUserTask (String taskUserEmailId) {
+		return null;
+	}
 }

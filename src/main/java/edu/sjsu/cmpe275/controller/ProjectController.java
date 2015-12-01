@@ -3,7 +3,10 @@ package edu.sjsu.cmpe275.controller;
 import java.util.List;
 import java.util.Set;
 
+import javax.xml.ws.Response;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -11,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +22,7 @@ import edu.sjsu.cmpe275.dto.Project;
 import edu.sjsu.cmpe275.dto.Task;
 import edu.sjsu.cmpe275.service.impl.ProjectServiceImpl;
 
+@SpringBootApplication
 @RestController
 @RequestMapping("/api/v1/*")
 @ComponentScan(basePackages = {"edu.sjsu.cmpe275.service.impl"})
@@ -67,12 +72,14 @@ public class ProjectController {
 		return new ResponseEntity<List<Project>>(proj, HttpStatus.OK);
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/project/{Id}/{state}/",
+	@RequestMapping(method=RequestMethod.POST, value="/project/{id}/{state}",
 			produces = {MediaType.APPLICATION_JSON_VALUE})
-	 @ResponseStatus(HttpStatus.OK) // 204
-	public void updateByProjectId(
-			@PathVariable long Id,
+	@ResponseBody
+	public void  updateByProjectId(
+			@PathVariable String id,
 			@PathVariable String state) {
-		projectServiceImpl.updateByProjectId(Id, state);
+		System.out.println("-----------Calling Project Update----");
+		long idLong = Long.parseLong(id);
+		projectServiceImpl.updateByProjectId(idLong, state);
 	}
 }
