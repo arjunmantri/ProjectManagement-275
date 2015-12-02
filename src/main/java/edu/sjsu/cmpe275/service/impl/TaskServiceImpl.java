@@ -28,6 +28,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -97,6 +98,9 @@ public class TaskServiceImpl{
     	return taskDAOImpl.getAllTask(emailId);
     }
     
+   public List<String> getAllTaskAsignee(long projectId) {
+    	return taskDAOImpl.getAllTaskAsignee(projectId);
+    }
 //    public Task getTaskService(long TaskId){
 //        return taskDAOImpl.getTaskDAO(TaskId);
 //    }

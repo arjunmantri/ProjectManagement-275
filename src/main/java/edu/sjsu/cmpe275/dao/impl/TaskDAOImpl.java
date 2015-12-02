@@ -4,6 +4,7 @@ import edu.sjsu.cmpe275.dto.Project;
 import edu.sjsu.cmpe275.dto.Task;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 
+
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -79,6 +83,21 @@ public class TaskDAOImpl implements ITaskDAO {
 		return  criteria.list();
 	}
     
+	public List<String> getAllTaskAsignee(Long projectId) {
+		List<String> listOfAsignees = new ArrayList<String>();
+		System.out.println("----getAllTaskAsignee-----"+projectId);
+		String sql = "from Task where ProjectId = " + projectId ;
+		Query query = sessionFactory.getCurrentSession().createQuery(sql);
+		List <Task> listOfTask = query.list();
+		for(Task task : listOfTask) {
+			listOfAsignees.add(task.getAssignee());
+		}
+		return listOfAsignees;
+	}
+	
+	
+	
+	
 //    only delete a task when projectId are same and task is in planning state.
 //    public Task deleteTaskDAO1(long TaskId, long ProjectId) {
 //        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);

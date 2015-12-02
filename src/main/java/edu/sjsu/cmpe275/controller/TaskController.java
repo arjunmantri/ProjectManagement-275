@@ -110,4 +110,14 @@ public class TaskController {
     	return assignedhashMap;
     }
     
+    @RequestMapping(method = RequestMethod.GET, value = "/allAssignee/{projectId}/", produces = {
+            MediaType.APPLICATION_JSON_VALUE}) 
+    public List<String> getAllTaskAsignee(@PathVariable String projectId) {
+    	System.out.println("---projectId-String---"+projectId);
+    	long projId = Long.parseLong(projectId);
+    	System.out.println("---projectId-long---"+projectId);
+    	
+    	return taskServiceImpl.getAllTaskAsignee(projId);
+    }
+    
 }
