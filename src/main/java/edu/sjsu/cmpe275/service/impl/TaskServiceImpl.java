@@ -92,7 +92,11 @@ public class TaskServiceImpl{
         taskDAOImpl.changeAssigneeTaskDAO(task);
         return task;
     }
-//
+    
+    public List<Task> getAllTask(String emailId) {
+    	return taskDAOImpl.getAllTask(emailId);
+    }
+    
 //    public Task getTaskService(long TaskId){
 //        return taskDAOImpl.getTaskDAO(TaskId);
 //    }

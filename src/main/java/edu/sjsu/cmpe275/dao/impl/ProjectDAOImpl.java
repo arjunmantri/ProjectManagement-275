@@ -1,6 +1,8 @@
 package edu.sjsu.cmpe275.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import edu.sjsu.cmpe275.dao.interfaces.IProjectDAO;
 import edu.sjsu.cmpe275.dto.Project;
+import edu.sjsu.cmpe275.dto.Task;
 import edu.sjsu.cmpe275.dto.User;
 
 @Repository
@@ -61,9 +64,25 @@ public class ProjectDAOImpl implements IProjectDAO {
 		updateProject(project);
 	}
 	
+
+	@Override
+	public List<String> getProjectDetailsForAssignedUser (long id) {
+		Project proj = (Project) sessionFactory.getCurrentSession().get(Project.class, id);
+		List<String> details = new ArrayList<String>();
+		details.add(proj.getDescription());
+		details.add(String.valueOf(proj.getId()));
+		details.add(proj.getTitle());
+		return details;
+	}
 	
 	@Override
-	public List<Project> getAllProjectForAssignedUserTask (String taskUserEmailId) {
-		return null;
+	public Set<Task> getAllTaskProjectById(long projectId) {
+		System.out.println("--------------getAllProjectByEmailId------------>>"+projectId);
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Project.class);
+		criteria.add(Restrictions.eq("id", projectId));
+		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);  
+		List<Project> proj =  criteria.list();
+		return proj.get(0).getTasks();
+		
 	}
 }

@@ -1,6 +1,8 @@
 package edu.sjsu.cmpe275.dao.impl;
 
+import edu.sjsu.cmpe275.dto.Project;
 import edu.sjsu.cmpe275.dto.Task;
+
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -9,8 +11,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import edu.sjsu.cmpe275.dao.interfaces.ITaskDAO;
+
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
+
 
 
 import java.util.List;
@@ -66,6 +70,15 @@ public class TaskDAOImpl implements ITaskDAO {
         return task;
     }
 
+  
+	public List<Task> getAllTask(String emailId) {
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
+		System.out.println("---------emailid----"+emailId);
+		criteria.add(Restrictions.eq("assignee", emailId.trim()));
+		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);  
+		return  criteria.list();
+	}
+    
 //    only delete a task when projectId are same and task is in planning state.
 //    public Task deleteTaskDAO1(long TaskId, long ProjectId) {
 //        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);

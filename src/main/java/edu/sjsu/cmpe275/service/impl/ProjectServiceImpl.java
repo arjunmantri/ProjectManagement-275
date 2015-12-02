@@ -52,4 +52,8 @@ public class ProjectServiceImpl  {
 	public void updateByProjectId(long id, String state) {
 		projectDao.updateByProjectId(id, state);
 	}
+	
+	public List<String> getProjectDetailsForAssignedUser (long id) {
+		return projectDao.getProjectDetailsForAssignedUser(id);
+	}
 }

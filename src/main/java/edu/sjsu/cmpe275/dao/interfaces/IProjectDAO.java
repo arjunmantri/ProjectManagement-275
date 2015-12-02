@@ -1,8 +1,10 @@
 package edu.sjsu.cmpe275.dao.interfaces;
 
 import java.util.List;
+import java.util.Set;
 
 import edu.sjsu.cmpe275.dto.Project;
+import edu.sjsu.cmpe275.dto.Task;
 
 
 public interface IProjectDAO {
@@ -12,6 +14,6 @@ public interface IProjectDAO {
 	void updateProject(Project project);
 	List<Project> deleteProject(long id, String emailId);
 	void updateByProjectId(long id, String state);
-	
-	List<Project> getAllProjectForAssignedUserTask(String taskUserEmailId);
+	Set<Task> getAllTaskProjectById(long id);
+	List<String> getProjectDetailsForAssignedUser(long projectId);
 }
