@@ -12,10 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
@@ -45,12 +42,12 @@ public class TaskController {
        
     }
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/tasks/",
+    @RequestMapping(method = RequestMethod.GET, value = "/tasks/{projectId}/",
             produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<Task> getTaskController(){
-        return taskServiceImpl.getAllTaskService();
+    public Set<Task> getTaskController(@PathVariable long projectId){
+        return taskServiceImpl.getAllTaskService(projectId);
     }
+
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{TaskId}",
             produces = {MediaType.APPLICATION_JSON_VALUE})

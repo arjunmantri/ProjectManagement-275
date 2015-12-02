@@ -70,9 +70,12 @@ public class TaskServiceImpl{
     }
 
     //@Transactional
-    public List<Task> getAllTaskService(){
-        return taskDAOImpl.getAllTasksDAO();
+    public Set<Task> getAllTaskService(long projectId) {
+        Project project = projectDAOImpl.getProjectById(projectId);
+        Set <Task> taskList = project.getTasks();
+        return taskList;
     }
+
 
     public Task deleteTaskService(long TaskId){
         Task task = new Task();

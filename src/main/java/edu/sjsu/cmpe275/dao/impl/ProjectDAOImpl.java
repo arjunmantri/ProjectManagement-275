@@ -20,7 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
+//import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 
 import edu.sjsu.cmpe275.dao.interfaces.IProjectDAO;
 import edu.sjsu.cmpe275.dto.Project;
