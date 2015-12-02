@@ -75,8 +75,8 @@ public  class UserController {
 	void inviteUser(
 			@PathVariable String toEmailId,
 			@PathVariable long ProjectId) {
-		//String body = "http://localhost:3000/thome/"+toEmailId +"/";
-		String body = "http://localhost:8080/api/v1/project/dineshpandeysjsu@gmail";
+		String body = "http://localhost:3000/thome/dineshpandeysjsu@gmail.com/";
+		//String body = "http://localhost:8080/api/v1/project/dineshpandeysjsu@gmail";
 		System.out.println("----Invite user email----");
 		smtpMailSender.sendUserInviteEmailService(toEmailId, ProjectId, body);
 	}
