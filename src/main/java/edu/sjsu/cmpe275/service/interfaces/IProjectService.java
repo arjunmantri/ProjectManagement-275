@@ -3,6 +3,7 @@ package edu.sjsu.cmpe275.service.interfaces;
 import java.util.List;
 
 import edu.sjsu.cmpe275.dto.Project;
+import edu.sjsu.cmpe275.dto.ProjectStateCount;
 
 public interface IProjectService {
 	
@@ -21,5 +22,7 @@ public interface IProjectService {
 	Project stateUpdateOfProject(Project project);
 	
 	List<Project> deleteProject(long id, String emailId);
+	
+	ProjectStateCount getProjectStateCount(Long projectId);
 
 }

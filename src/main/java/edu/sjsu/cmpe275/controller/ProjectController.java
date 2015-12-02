@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.sjsu.cmpe275.dto.Project;
+import edu.sjsu.cmpe275.dto.ProjectStateCount;
 import edu.sjsu.cmpe275.dto.Task;
 import edu.sjsu.cmpe275.service.impl.ProjectServiceImpl;
 
@@ -81,5 +82,13 @@ public class ProjectController {
 		System.out.println("-----------Calling Project Update----");
 		long idLong = Long.parseLong(id);
 		projectServiceImpl.updateByProjectId(idLong, state);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/project/taskstatus/{projectId}/",
+			produces = {MediaType.APPLICATION_JSON_VALUE})
+	public ResponseEntity<ProjectStateCount> getProjectStateCount(@PathVariable String projectId) {
+		long idLong = Long.parseLong(projectId);
+		ProjectStateCount projectStateCount = projectServiceImpl.getProjectStateCount(idLong);
+		return new ResponseEntity<ProjectStateCount>(projectStateCount, HttpStatus.OK);
 	}
 }

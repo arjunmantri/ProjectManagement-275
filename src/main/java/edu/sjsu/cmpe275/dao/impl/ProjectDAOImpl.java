@@ -1,20 +1,33 @@
 package edu.sjsu.cmpe275.dao.impl;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.transform.AliasToBeanResultTransformer;
+import org.hibernate.transform.Transformers;
+import org.hibernate.type.LongType;
+import org.hibernate.type.StringType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
+
 import edu.sjsu.cmpe275.dao.interfaces.IProjectDAO;
 import edu.sjsu.cmpe275.dto.Project;
+import edu.sjsu.cmpe275.dto.ProjectStateCount;
 import edu.sjsu.cmpe275.dto.Task;
 import edu.sjsu.cmpe275.dto.User;
+
 
 @Repository
 public class ProjectDAOImpl implements IProjectDAO {
@@ -85,4 +98,36 @@ public class ProjectDAOImpl implements IProjectDAO {
 		return proj.get(0).getTasks();
 		
 	}
+	
+	@Override
+	public ProjectStateCount getProjectStateCount(Long projectId) {
+			String SQL = " SELECT  TaskState, Count(*) countTaskState  FROM  Tasks "
+				+ " where ProjectId =" + projectId + " GROUP BY  TaskState";
+		ProjectStateCount projectStateResult = new ProjectStateCount();
+			
+		List resultWithAliasedBeans = sessionFactory.getCurrentSession().createSQLQuery(SQL)
+				  .addScalar("taskState", StringType.INSTANCE)
+				  .addScalar("countTaskState",LongType.INSTANCE)
+				  .setResultTransformer(new AliasToBeanResultTransformer(ProjectStateCount.class))
+				  .list();
+		projectStateResult.setProjectId(projectId);
+		for( Object projState  : resultWithAliasedBeans) {
+			ProjectStateCount projStateCount = (ProjectStateCount) projState;
+			if(projStateCount.getTaskState().equalsIgnoreCase("new")) {
+				projectStateResult.setCountOfNewState(projStateCount.getCountTaskState());
+			}
+			 else if(projStateCount.getTaskState().equalsIgnoreCase("assigned")) {
+				 projectStateResult.setCountOfAssignedState(projStateCount.getCountTaskState());
+			} else if(projStateCount.getTaskState().equalsIgnoreCase("started")) {
+				projectStateResult.setCountOfStartedState(projStateCount.getCountTaskState());
+			} else if(projStateCount.getTaskState().equalsIgnoreCase("finished")) {
+				projectStateResult.setCountOfFinishedState(projStateCount.getCountTaskState());
+			} else if(projStateCount.getTaskState().equalsIgnoreCase("cancelled")) {
+				projectStateResult.setCountOfCancelledState(projStateCount.getCountTaskState());
+			}
+			
+		}
+		
+		return projectStateResult;
+}
 }

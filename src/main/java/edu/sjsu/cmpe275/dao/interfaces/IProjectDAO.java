@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import edu.sjsu.cmpe275.dto.Project;
+import edu.sjsu.cmpe275.dto.ProjectStateCount;
 import edu.sjsu.cmpe275.dto.Task;
 
 
@@ -16,4 +17,5 @@ public interface IProjectDAO {
 	void updateByProjectId(long id, String state);
 	Set<Task> getAllTaskProjectById(long id);
 	List<String> getProjectDetailsForAssignedUser(long projectId);
+	ProjectStateCount getProjectStateCount(Long projectId);
 }
