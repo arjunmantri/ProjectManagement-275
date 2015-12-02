@@ -68,4 +68,16 @@ public  class UserController {
 		    	System.out.println("--------User is not valid----------");
 		    }
     }
+
+
+	@RequestMapping(method = RequestMethod.POST, value = "/user/{toEmailId}/{ProjectId}",
+			produces = {MediaType.APPLICATION_JSON_VALUE})
+	void inviteUser(
+			@PathVariable String toEmailId,
+			@PathVariable long ProjectId) {
+		String body = "http://localhost:8080/api/v1/project/dineshpandeysjsu@gmail";
+		System.out.println("----Invite user email----");
+		smtpMailSender.sendUserInviteEmailService(toEmailId, ProjectId, body);
+	}
+
 }

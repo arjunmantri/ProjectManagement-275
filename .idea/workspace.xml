@@ -4,10 +4,8 @@
     <list default="true" id="36eb5373-4923-42cb-bded-2b92c5624f58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/config/HibernateConfig.java" afterPath="$PROJECT_DIR$/src/main/java/config/HibernateConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/TaskController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/TaskController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/impl/TaskDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/impl/TaskDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/interfaces/ITaskDAO.java" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/interfaces/ITaskDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/TaskServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/TaskServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/EmailServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/EmailServiceImpl.java" />
     </list>
     <ignored path="ProjectManagement-275.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,20 +28,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HibernateConfig.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HibernateConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/config/HibernateConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+            <state vertical-scroll-proportion="-0.03448276">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TaskController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/TaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61206895">
+            <state vertical-scroll-proportion="0.0">
               <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -67,8 +65,18 @@
       <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.777779">
+              <caret line="79" column="49" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmailServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/EmailServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,20 +131,20 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/interfaces/IProjectService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/ProjectController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/EmailServiceImpl.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/impl/ProjectDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/interfaces/ITaskService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dto/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dto/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/impl/EmailDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/Cmpe275ProjectManagementApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/config/HibernateConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/TaskServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/impl/TaskDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/interfaces/ITaskDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/TaskController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/EmailServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/config/HibernateConfig.java" />
       </list>
     </option>
   </component>
@@ -182,8 +190,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -524,7 +532,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1039,15 +1047,16 @@
       <workItem from="1448522189252" duration="36478000" />
       <workItem from="1448672617176" duration="4000" />
       <workItem from="1448672881222" duration="6808000" />
+      <workItem from="1449025703088" duration="752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76749000" />
+    <option name="totallyTimeSpent" value="77501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1278" height="727" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1056,7 +1065,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25227964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25227964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12754303" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1097,6 +1106,22 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/impl/TaskDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dao/interfaces/ITaskDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/config/HibernateConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1387,14 +1412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/EmailServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/dto/Task.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1407,14 +1424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1484,21 +1493,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/config/HibernateConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61206895">
+        <state vertical-scroll-proportion="0.0">
           <caret line="57" column="52" selection-start-line="57" selection-start-column="52" selection-end-line="57" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.777779">
+          <caret line="79" column="49" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/sjsu/cmpe275/service/impl/EmailServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/config/HibernateConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.03448276">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

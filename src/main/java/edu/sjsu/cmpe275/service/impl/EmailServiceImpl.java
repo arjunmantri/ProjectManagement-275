@@ -100,4 +100,18 @@ public class EmailServiceImpl {//implements IEmailService {
 	public boolean validateUserName(String userName) {
 		return emailDaoImpl.validateUserName(userName);
 	}
+
+	public void sendUserInviteEmailService (String toEmailId, long ProjectId, String body) {
+		MimeMessage message = javaMailSender.createMimeMessage();
+		MimeMessageHelper messageHelper;
+		try {
+			messageHelper = new MimeMessageHelper(message, true);
+			messageHelper.setTo(toEmailId);
+			messageHelper.setSubject("You are invited to join and view project");
+			messageHelper.setText(body, true);
+			javaMailSender.send(message);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
 }
