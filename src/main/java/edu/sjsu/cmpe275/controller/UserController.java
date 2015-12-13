@@ -26,6 +26,10 @@ public  class UserController {
 	@Autowired
 	public EmailServiceImpl smtpMailSender;
 	
+	
+	/*
+	 * UserSignUp email
+	 */
 
 	@RequestMapping(method = RequestMethod.POST, value = "/user/{toEmailId}/{userName}/{passWord}", 
 			produces = {MediaType.APPLICATION_JSON_VALUE})  
@@ -36,7 +40,6 @@ public  class UserController {
 			String body = "Please click to the given link for http://localhost:3000/thome/" + toEmailId;
 			if(smtpMailSender.isUserValidated(toEmailId, passWord, userName)) {
 				System.out.println("----User is already validated-----");
-				// URL for home Page set success code for showing the home page
 			} else {
 				System.out.println("----User is not validated sends an email----");
 				smtpMailSender.sendUserSignUpEmail(toEmailId, userName, passWord, body);
@@ -44,9 +47,11 @@ public  class UserController {
 			JSONObject response = new JSONObject();
 			response.put("EmailSend", "SendSuccessfully");
 			return new ResponseEntity<String>(response.toString() , HttpStatus.OK);
-		// return success code that please click the email for validation
     }
 
+	/*
+	 * Implementation when the user click the email id.
+	 */
 	@RequestMapping(method = RequestMethod.GET, value = "/user/{emailId}/{hashCode}", produces = {
             MediaType.APPLICATION_JSON_VALUE})  
 	void userEmailClick(
@@ -56,6 +61,9 @@ public  class UserController {
 			System.out.println("--------User Validated--Return--True---"+user);
    }
 	
+	/*
+	 * Implementation for user sign in.
+	 */
 	@RequestMapping(method = RequestMethod.GET, value = "/usersignin/{userName}/{password}", produces = {
             MediaType.APPLICATION_JSON_VALUE})  
 	void userSignIn(@PathVariable String userName, @PathVariable String password) {
@@ -69,7 +77,9 @@ public  class UserController {
 		    }
     }
 
-
+	/*
+	 * Implementaton for inviting the user.
+	 */
 	@RequestMapping(method = RequestMethod.POST, value = "/user/{toEmailId}/{ProjectId}",
 			produces = {MediaType.APPLICATION_JSON_VALUE})
 	void inviteUser(

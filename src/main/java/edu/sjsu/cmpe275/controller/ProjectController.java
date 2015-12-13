@@ -8,6 +8,7 @@ import javax.xml.ws.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,15 @@ import edu.sjsu.cmpe275.dto.ProjectStateCount;
 import edu.sjsu.cmpe275.dto.Task;
 import edu.sjsu.cmpe275.service.impl.ProjectServiceImpl;
 
+/*
+ * @author Team - 3
+ * Project controller class for has the implementation for 
+ * 1. Project creation.
+ * 2. Get all projects
+ * 3. Delete project
+ * 4. Update project
+ */
+
 @SpringBootApplication
 @RestController
 @RequestMapping("/api/v1/*")
@@ -32,6 +42,9 @@ public class ProjectController {
 	@Autowired
 	public ProjectServiceImpl projectServiceImpl;
 	
+	/*
+	 * Implementation for create project.
+	 */
 	@RequestMapping(method=RequestMethod.POST, value="/project/{title}/{description}/{state}/{projectOwnerEmail}/",
 			produces = {MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<List<Project>> createProject(
@@ -39,12 +52,14 @@ public class ProjectController {
 			@PathVariable String description,
 			@PathVariable String state,
 			@PathVariable String projectOwnerEmail) {
-			System.out.println("----------Email Id User Entered--->>"+projectOwnerEmail);
 			Project proj = projectServiceImpl.createPorject(title, description, state, projectOwnerEmail);
 			List<Project> allProject = projectServiceImpl.getAllProjectByEmailId(projectOwnerEmail);
 			return new ResponseEntity<List<Project>>(allProject, HttpStatus.OK);
 	}
 	
+	/*
+	 * Implementation for get all project by email Id.
+	 */
 	@RequestMapping(method=RequestMethod.GET, value="/project/{emailId}/",
 			produces = {MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<List<Project>> getAllProjectByEmailId(
@@ -63,6 +78,9 @@ public class ProjectController {
 		return new ResponseEntity<List<Project>>(proj, HttpStatus.OK);
 	}
 	
+	/*
+	 * Implementation for delete project.
+	 */
 	@RequestMapping(method=RequestMethod.DELETE, value="/project/{Id}/{emailId}/",
 			produces = {MediaType.APPLICATION_JSON_VALUE})
 	public ResponseEntity<List<Project>> deleteProjectById(
@@ -73,6 +91,9 @@ public class ProjectController {
 		return new ResponseEntity<List<Project>>(proj, HttpStatus.OK);
 	}
 	
+	/*
+	 * Implementation for update project.
+	 */
 	@RequestMapping(method=RequestMethod.POST, value="/project/{id}/{state}",
 			produces = {MediaType.APPLICATION_JSON_VALUE})
 	@ResponseBody
@@ -83,6 +104,10 @@ public class ProjectController {
 		long idLong = Long.parseLong(id);
 		projectServiceImpl.updateByProjectId(idLong, state);
 	}
+	
+	/*
+	 * Implementation for get project status. Count for completed, running, new state.
+	 */
 	
 	@RequestMapping(method=RequestMethod.GET, value="/project/taskstatus/{projectId}/",
 			produces = {MediaType.APPLICATION_JSON_VALUE})

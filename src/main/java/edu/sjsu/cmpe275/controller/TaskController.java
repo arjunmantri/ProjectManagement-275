@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/*
+ * This class is meant for task management, 
+ * @author Team - 3
+ */
 @RestController
 @RequestMapping("/api/v1/*")
 public class TaskController {
@@ -47,14 +51,20 @@ public class TaskController {
     public Set<Task> getTaskController(@PathVariable long projectId){
         return taskServiceImpl.getAllTaskService(projectId);
     }
-
+    
+    /*
+     * Implementation for the delete task.
+     */
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{TaskId}",
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public Task deleteTaskController(@PathVariable long TaskId){
         return taskServiceImpl.deleteTaskService(TaskId);
     }
-
+    
+    /*
+     * Implementation for state change
+     */
 
     @RequestMapping(method = RequestMethod.PUT, value = "/tasks/{TaskId}/{TaskState}",
             produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -76,7 +86,9 @@ public class TaskController {
     	return taskServiceImpl.getAllTask(emaildId);
     }
     
-
+    /*
+     * Implemention to get all the task details for assigned user.
+     */
     @RequestMapping(method = RequestMethod.GET, value = "/allAssignedTask/{emailId}/", produces = {
             MediaType.APPLICATION_JSON_VALUE}) 
      public Map<String, AssignedTaskDetails> getAllTaskDetailsForAssignedUser(@PathVariable String emailId) {
@@ -106,6 +118,10 @@ public class TaskController {
       	}
     	return assignedhashMap;
     }
+    
+    /*
+     * Get all the asignee for the task.
+     */
     
     @RequestMapping(method = RequestMethod.GET, value = "/allAssignee/{projectId}/", produces = {
             MediaType.APPLICATION_JSON_VALUE}) 

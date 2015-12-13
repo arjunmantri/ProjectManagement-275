@@ -5,11 +5,13 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 
 @Configuration
 @ComponentScan(basePackages = { "com.example","edu.sjsu.cmpe275.*", "edu.sjsu.cmpe275.dao.impl",
         "edu.sjsu.cmpe275.dto","edu.sjsu.cmpe275.service.impl","config","util","filter"})
+@EnableAspectJAutoProxy
 @EnableAutoConfiguration
 @SpringBootApplication
 public class Cmpe275ProjectManagementApplication {
